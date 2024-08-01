@@ -7,8 +7,8 @@
         </b>
     </p>
     <p>
-        <a href="https://www.npmjs.com/package/cleverbot-free" target="_blank" title="cleverbot-free - npm" style="text-decoration:none">
-            <img src="https://img.shields.io/npm/dt/cleverbot-free?maxAge=3600" alt="Number of downloads">
+        <a href="https://www.npmjs.com/package/@sefinek/cleverbot-free" target="_blank" title="@sefinek/cleverbot-free - npm" style="text-decoration:none">
+            <img src="https://img.shields.io/npm/dt/@sefinek/cleverbot-free?maxAge=3600" alt="Number of downloads">
             <img src="https://img.shields.io/github/issues/sefinek24/cleverbot-free" alt="Issues">
             <img src="https://img.shields.io/github/last-commit/sefinek24/cleverbot-free" alt="Last commit">
             <img src="https://img.shields.io/github/commit-activity/w/sefinek24/cleverbot-free" alt="Commit activity">
