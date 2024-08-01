@@ -22,7 +22,7 @@ providing a convenient and cost-effective way to integrate Cleverbot chatbot fea
 
 
 ## 🔒 Security
-The module selects a [User Agent](https://en.wikipedia.org/wiki/User_agent) randomly from an [array](https://github.com/sefinek24/cleverbot-free) and uses it to send requests to `cleverbot.com`.
+The module selects a [User Agent](https://en.wikipedia.org/wiki/User_agent) randomly from an [array](https://github.com/sefinek24/cleverbot-free/blob/main/scripts/headers/useragent.js#L1) and uses it to send requests to `cleverbot.com`.
 Each restart of the application results in the selection of a different user agent at random.
 
 
