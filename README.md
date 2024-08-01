@@ -87,7 +87,7 @@ A property that represents the current version number of the `cleverbot-free` mo
 
 ## 💬 Example (see also [example.js](example.js))
 ```js
-const CleverBot = require('cleverbot-free');
+const CleverBot = require('@sefinek/cleverbot-free');
 
 CleverBot.config({
     debug: false,

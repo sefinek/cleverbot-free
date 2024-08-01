@@ -1,4 +1,4 @@
-declare module 'cleverbot-free' {
+declare module '@sefinek/cleverbot-free' {
     export type Stimulus = string;
     export type Context = string[];
     export type Language =
@@ -79,7 +79,7 @@ declare module 'cleverbot-free' {
      * @param language - Optional language code for the Cleverbot session.
      * @returns The response from Cleverbot as a string.
      * @example
-     * const CleverBot = require('cleverbot-free');
+     * const CleverBot = require('@sefinek/cleverbot-free');
      *
      * CleverBot.config({ debug: false, defaultLanguage: 'en', maxRetryAttempts: 5, retryBaseCooldown: 4000, cookieExpirationTime: 15768000 });
      *
@@ -130,7 +130,7 @@ declare module 'cleverbot-free' {
      * Allows for the deletion of the current session and the initiation of a new one. The conversation context should also be removed.
      *
      * @example
-     * const CleverBot = require('cleverbot-free');
+     * const CleverBot = require('@sefinek/cleverbot-free');
      *
      * const context = ['Hello', 'Hi', 'How are you?'];
      *
