@@ -61,13 +61,13 @@ Configures the settings of the Cleverbot module. This function allows you to set
 
 - `configurationObject` (**object**, **required**): An object containing configuration settings.
 
-  | Property                                                                                                                         | Default value              | Description                                                                                         |
-  |----------------------------------------------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------|
-  | [`debug`](https://github.com/sefinek24/cleverbot-free/blob/36887fa8433b03269da0a40575790d4494814e6a/index.js#L9)                 | `false`                    | Enables or disables debug mode. When enabled,<br>the module provides detailed debug information.    |
-  | [`selectedLanguage`](https://github.com/sefinek24/cleverbot-free/blob/36887fa8433b03269da0a40575790d4494814e6a/index.js#L10)     | `en`                       | Sets the default language for the Cleverbot conversations.                                          |
-  | [`maxRetryAttempts`](https://github.com/sefinek24/cleverbot-free/blob/36887fa8433b03269da0a40575790d4494814e6a/index.js#L11)     | `3`                        | Specifies the maximum number of retry attempts for<br>the API call if it fails initially.           |
-  | [`retryBaseCooldown`](https://github.com/sefinek24/cleverbot-free/blob/36887fa8433b03269da0a40575790d4494814e6a/index.js#L12)    | `3000`<br>(3 seconds)      | Determines the base cooldown period in milliseconds<br>before retrying an API call after a failure. |
-  | [`cookieExpirationTime`](https://github.com/sefinek24/cleverbot-free/blob/36887fa8433b03269da0a40575790d4494814e6a/index.js#L13) | `15768000`<br>(4.38 hours) | Sets the time in milliseconds after which the cookie<br>should be refreshed.                        |
+  | Property                                                                                     | Default value              | Description                                                                                         |
+  |----------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------|
+  | [`debug`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L9)                 | `false`                    | Enables or disables debug mode. When enabled,<br>the module provides detailed debug information.    |
+  | [`selectedLanguage`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L10)     | `en`                       | Sets the default language for the Cleverbot conversations.                                          |
+  | [`maxRetryAttempts`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L11)     | `3`                        | Specifies the maximum number of retry attempts for<br>the API call if it fails initially.           |
+  | [`retryBaseCooldown`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L12)    | `3000`<br>(3 seconds)      | Determines the base cooldown period in milliseconds<br>before retrying an API call after a failure. |
+  | [`cookieExpirationTime`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L13) | `15768000`<br>(4.38 hours) | Sets the time in milliseconds after which the cookie<br>should be refreshed.                        |
 
 ### `CleverBot.getData()`
 Retrieves the current session data and other relevant information.
