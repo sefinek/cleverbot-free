@@ -21,11 +21,6 @@ This module allows developers to interact with the Cleverbot [API](https://en.wi
 providing a convenient and cost-effective way to integrate Cleverbot chatbot features into their projects.
 
 
-## 🔒 Security
-The module selects a [User Agent](https://en.wikipedia.org/wiki/User_agent) randomly from an [array](https://github.com/sefinek24/cleverbot-free/blob/main/scripts/headers/useragent.js#L1) and uses it to send requests to `cleverbot.com`.
-Each restart of the application results in the selection of a different user agent at random.
-
-
 ## ⚠️ Warning
 **Using this module could potentially lead to a permanent [IP](https://en.wikipedia.org/wiki/IP_address) ban on [cleverbot.com](https://www.cleverbot.com), although this is unlikely.**
 
