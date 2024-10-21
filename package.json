@@ -1,6 +1,6 @@
 {
   "name": "@sefinek/cleverbot-free",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Simple and unofficial NPM module for interacting with the same API used by the Cleverbot website. Available for free!",
   "keywords": [
     "cleverbot",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "main": "index.js",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node test/async.js && node test/promise.js",
     "up": "ncu -u && npm install && npm update && npm audit fix"
