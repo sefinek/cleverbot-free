@@ -13,25 +13,16 @@ declare module '@sefinek/cleverbot-free' {
         'Accept-Language': string;
         'Cache-Control': string;
         'Connection': string;
-        'Content-Type': string;
         'Host': string;
-        'Pragma': string;
-        'Origin': string;
         'Referer': string;
         'Sec-Ch-Ua'?: string;
-        'Sec-Ch-Ua-Arch'?: string;
-        'Sec-Ch-Ua-Bitness'?: string;
-        'Sec-Ch-Ua-Full-Version'?: string;
-        'Sec-Ch-Ua-Full-Version-List'?: string;
         'Sec-Ch-Ua-Mobile': string;
-        'Sec-Ch-Ua-Model': string;
         'Sec-Ch-Ua-Platform'?: string;
-        'Sec-Ch-Ua-Platform-Version'?: string;
-        'Sec-Ch-Ua-Wow64': string;
         'Sec-Fetch-Dest': string;
         'Sec-Fetch-Mode': string;
         'Sec-Fetch-Site': string;
-        'Sec-Gpc': string;
+        'Sec-Fetch-User': string;
+        'Upgrade-Insecure-Requests': string;
         'User-Agent': string;
     };
 
