@@ -10,7 +10,7 @@ export default [
 			globals: {
 				...globals.node,
 				...globals.es2024,
-				...globals.browser,
+				...globals.browser
 			}
 		},
 		rules: {
@@ -52,6 +52,6 @@ export default [
 			'wrap-regex': 'error',
 			'yoda': 'error'
 		},
-		ignores: ['node_modules', 'public/js/bootstrap.bundle.min.js']
+		ignores: ['node_modules']
 	}
 ];
