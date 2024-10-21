@@ -73,7 +73,7 @@ const updateCookiesIfNeeded = async () => {
 		cookies = cookieResponse.headers['set-cookie'];
 		lastCookieUpdate = Date.now();
 
-		if (debug) console.debug('Cookies has been updated:', cookies);
+		if (debug) console.debug('Cookies have been updated:', cookies);
 	} catch (err) {
 		failedRequestsCount++;
 
