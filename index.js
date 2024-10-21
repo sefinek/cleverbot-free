@@ -1,6 +1,6 @@
 const axios = require('axios');
 const SUPPORTED_LANGUAGES = require('./scripts/languages.js');
-const DEFAULT_HEADERS = require('./scripts/headers/default-headers.js');
+const HEADERS = require('./scripts/headers.js');
 const md5 = require('./scripts/md5.js');
 const sleep = require('./scripts/sleep.js');
 const { version } = require('./package.json');
@@ -23,7 +23,7 @@ let successfulRequestsCount = 0;
 let failedRequestsCount = 0;
 
 /* Build payloads */
-function buildCookieHeader() {
+const buildCookieHeader = () => {
 	let cookieHeader = cookies ? `_cbsid=-1; ${cookies[0].split(';')[0]};` : '';
 	if (xai) cookieHeader += ` XAI=${xai.substring(0, 3)};`;
 	if (cbsId) cookieHeader += ` CBSID=${cbsId};`;
@@ -32,9 +32,9 @@ function buildCookieHeader() {
 
 	if (debug) console.debug('Cookie header:', { cookieHeader });
 	return cookieHeader;
-}
+};
 
-function buildMainPayload(stimulus, context, language) {
+const buildMainPayload = (stimulus, context, language) => {
 	let payload = `stimulus=${encodeURIComponent(stimulus)}&`;
 
 	context.reverse().forEach((msg, i) => {
@@ -46,10 +46,10 @@ function buildMainPayload(stimulus, context, language) {
 
 	if (debug) console.debug('Built payload:', { stimulus, context, language, payload });
 	return payload;
-}
+};
 
 /* Update cookies */
-async function updateCookiesIfNeeded() {
+const updateCookiesIfNeeded = async () => {
 	if (debug) {
 		if (cookies) {
 			console.debug('Cookies are still valid.');
@@ -64,7 +64,7 @@ async function updateCookiesIfNeeded() {
 		const cookieResponse = await axios.get(`https://www.cleverbot.com/extras/conversation-social-min.js?${new Date().toISOString().split('T')[0].replace(/-/g, '')}`, {
 			timeout: 25000,
 			headers: {
-				...DEFAULT_HEADERS,
+				...HEADERS,
 				'Cookie': '_cbsid=-1; note=1'
 			}
 		});
@@ -83,10 +83,10 @@ async function updateCookiesIfNeeded() {
 			throw new Error(`Failed to update cookies. ${err.message}`);
 		}
 	}
-}
+};
 
 /* Main Cleverbot function */
-async function callCleverbotAPI(stimulus, context, language) {
+const callCleverbotAPI = async (stimulus, context, language) => {
 	if (debug) console.debug('Calling Cleverbot API with:', { stimulus, context, language });
 
 	await updateCookiesIfNeeded();
@@ -103,7 +103,7 @@ async function callCleverbotAPI(stimulus, context, language) {
 		const response = await axios.post(url, payload, {
 			timeout: 20000,
 			headers: {
-				...DEFAULT_HEADERS,
+				...HEADERS,
 				'Content-Length': Buffer.byteLength(payload),
 				'Cookie': buildCookieHeader()
 			}
@@ -131,7 +131,7 @@ async function callCleverbotAPI(stimulus, context, language) {
 
 		throw new Error(`Cleverbot API call failed: ${err.message}`);
 	}
-}
+};
 
 
 CleverBot.interact = async (stimulus, context = [], language = selectedLanguage) => {
@@ -210,7 +210,7 @@ CleverBot.newSession = () => {
 };
 
 CleverBot.getData = () => {
-	return { debug, selectedLanguage, maxRetryAttempts, retryBaseCooldown, cookie: { cookieExpirationTime, data: [{ content: cookies, lastUpdate: lastCookieUpdate }] }, session: { cbsId, xai, ns, lastResponse }, request: { successfulRequestsCount, failedRequestsCount, headers: DEFAULT_HEADERS } };
+	return { debug, selectedLanguage, maxRetryAttempts, retryBaseCooldown, cookie: { cookieExpirationTime, data: [{ content: cookies, lastUpdate: lastCookieUpdate }] }, session: { cbsId, xai, ns, lastResponse }, request: { successfulRequestsCount, failedRequestsCount, headers: HEADERS } };
 };
 
 CleverBot.version = version;
