@@ -3,13 +3,14 @@
   "version": "2.1.5",
   "description": "Simple and unofficial NPM module for interacting with the same API used by the Cleverbot website. Available for free!",
   "keywords": [
+    "cleverbot api",
+    "cleverbot discord",
+    "cleverbot free",
+    "cleverbot free",
     "cleverbot",
     "cleverbot-api",
-    "cleverbot-discord",
-    "cleverbot-free",
-    "cleverbotfree",
-    "cleverbotfree-api",
-    "cleverbot-free"
+    "cleverbotfree api",
+    "cleverbotfree"
   ],
   "homepage": "https://github.com/sefinek24/cleverbot-free#readme",
   "bugs": {
