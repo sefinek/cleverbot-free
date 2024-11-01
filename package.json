@@ -12,13 +12,13 @@
     "cleverbotfree api",
     "cleverbotfree"
   ],
-  "homepage": "https://github.com/sefinek24/cleverbot-free#readme",
+  "homepage": "https://github.com/sefinek/cleverbot-free#readme",
   "bugs": {
-    "url": "https://github.com/sefinek24/cleverbot-free/issues"
+    "url": "https://github.com/sefinek/cleverbot-free/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sefinek24/cleverbot-free.git"
+    "url": "git+https://github.com/sefinek/cleverbot-free.git"
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",

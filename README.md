@@ -9,10 +9,10 @@
     <p>
         <a href="https://www.npmjs.com/package/@sefinek/cleverbot-free" target="_blank" title="@sefinek/cleverbot-free - npm" style="text-decoration:none">
             <img src="https://img.shields.io/npm/dt/@sefinek/cleverbot-free?maxAge=3600" alt="Number of downloads">
-            <img src="https://img.shields.io/github/issues/sefinek24/cleverbot-free" alt="Issues">
-            <img src="https://img.shields.io/github/last-commit/sefinek24/cleverbot-free" alt="Last commit">
-            <img src="https://img.shields.io/github/commit-activity/w/sefinek24/cleverbot-free" alt="Commit activity">
-            <img src="https://img.shields.io/github/languages/code-size/sefinek24/cleverbot-free" alt="Code size">
+            <img src="https://img.shields.io/github/issues/sefinek/cleverbot-free" alt="Issues">
+            <img src="https://img.shields.io/github/last-commit/sefinek/cleverbot-free" alt="Last commit">
+            <img src="https://img.shields.io/github/commit-activity/w/sefinek/cleverbot-free" alt="Commit activity">
+            <img src="https://img.shields.io/github/languages/code-size/sefinek/cleverbot-free" alt="Code size">
         </a>
     </p>
 </div>
@@ -58,16 +58,16 @@ Configures the settings of the Cleverbot module. This function allows you to set
 
   | Property                                                                                     | Default value              | Description                                                                                         |
   |----------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------|
-  | [`debug`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L9)                 | `false`                    | Enables or disables debug mode. When enabled,<br>the module provides detailed debug information.    |
-  | [`selectedLanguage`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L10)     | `en`                       | Sets the default language for the Cleverbot conversations.                                          |
-  | [`maxRetryAttempts`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L11)     | `3`                        | Specifies the maximum number of retry attempts for<br>the API call if it fails initially.           |
-  | [`retryBaseCooldown`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L12)    | `3000`<br>(3 seconds)      | Determines the base cooldown period in milliseconds<br>before retrying an API call after a failure. |
-  | [`cookieExpirationTime`](https://github.com/sefinek24/cleverbot-free/blob/main/index.js#L13) | `15768000`<br>(4.38 hours) | Sets the time in milliseconds after which the cookie<br>should be refreshed.                        |
+  | [`debug`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L9)                 | `false`                    | Enables or disables debug mode. When enabled,<br>the module provides detailed debug information.    |
+  | [`selectedLanguage`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L10)     | `en`                       | Sets the default language for the Cleverbot conversations.                                          |
+  | [`maxRetryAttempts`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L11)     | `3`                        | Specifies the maximum number of retry attempts for<br>the API call if it fails initially.           |
+  | [`retryBaseCooldown`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L12)    | `3000`<br>(3 seconds)      | Determines the base cooldown period in milliseconds<br>before retrying an API call after a failure. |
+  | [`cookieExpirationTime`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L13) | `15768000`<br>(4.38 hours) | Sets the time in milliseconds after which the cookie<br>should be refreshed.                        |
 
 ### `CleverBot.getData()`
 Retrieves the current session data and other relevant information.
 
-- **Returns**: See [types](https://github.com/sefinek24/cleverbot-free/blob/c0c6748fb8828a611b005216e768af370cb61ea4/index.d.ts#L64).
+- **Returns**: See [types](https://github.com/sefinek/cleverbot-free/blob/c0c6748fb8828a611b005216e768af370cb61ea4/index.d.ts#L64).
 
 ### `CleverBot.newSession()`
 Allows for the deletion of the current session and the initiation of a new one. The conversation context should also be removed.
@@ -112,13 +112,13 @@ const context = [];
 
 ## 🤔 What can this module be used for?
 - Your [Discord Bot](https://discord.com/developers/docs/intro)
-- *Do you have additional ideas for utilizing this module? Create a [Pull Request](https://github.com/sefinek24/cleverbot-free/pulls) and contribute them here!*
+- *Do you have additional ideas for utilizing this module? Create a [Pull Request](https://github.com/sefinek/cleverbot-free/pulls) and contribute them here!*
 
 
 ## 💙 Thanks
-If you require any assistance or have questions regarding this module, don't hesitate to open a new [GitHub Issue](https://github.com/sefinek24/cleverbot-free/issues).
+If you require any assistance or have questions regarding this module, don't hesitate to open a new [GitHub Issue](https://github.com/sefinek/cleverbot-free/issues).
 Your feedback and contributions are highly appreciated.
-If you find this module valuable and useful for your projects, we kindly invite you to show your support by giving it [⭐ a star on GitHub](https://github.com/sefinek24/cleverbot-free).
+If you find this module valuable and useful for your projects, we kindly invite you to show your support by giving it [⭐ a star on GitHub](https://github.com/sefinek/cleverbot-free).
 Thank you for using [cleverbot-free](https://www.npmjs.com/package/cleverbot-free)!
 
 
