@@ -65,8 +65,8 @@ const updateCookiesIfNeeded = async () => {
 			timeout: 25000,
 			headers: {
 				...HEADERS,
-				'Cookie': '_cbsid=-1; note=1'
-			}
+				'Cookie': '_cbsid=-1; note=1',
+			},
 		});
 
 		successfulRequestsCount++;
@@ -105,8 +105,8 @@ const callCleverbotAPI = async (stimulus, context, language) => {
 			headers: {
 				...HEADERS,
 				'Content-Length': Buffer.byteLength(payload),
-				'Cookie': buildCookieHeader()
-			}
+				'Cookie': buildCookieHeader(),
+			},
 		});
 
 		const { data } = response;
