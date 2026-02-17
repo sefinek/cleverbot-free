@@ -5,7 +5,7 @@ module.exports = {
 	'Cache-Control': 'max-age=0',
 	'Connection': 'keep-alive',
 	'Host': 'www.cleverbot.com',
-	'Sec-Ch-Ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+	'Sec-Ch-Ua': '"Google Chrome";v="145", "Chromium";v="145", "Not/A)Brand";v="24"',
 	'Sec-Ch-Ua-Mobile': '?0',
 	'Sec-Ch-Ua-Platform': '"Windows"',
 	'Sec-Fetch-Dest': 'document',
@@ -13,5 +13,5 @@ module.exports = {
 	'Sec-Fetch-Site': 'none',
 	'Sec-Fetch-User': '?1',
 	'Upgrade-Insecure-Requests': '1',
-	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36',
 };
