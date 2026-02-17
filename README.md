@@ -56,8 +56,8 @@ Configures the settings of the Cleverbot module. This function allows you to set
 
 - `configurationObject` (**object**, **required**): An object containing configuration settings.
 
-  | Property                                                                                     | Default value              | Description                                                                                         |
-  |----------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------|
+  | Property                                                                                   | Default value              | Description                                                                                         |
+  |--------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------|
   | [`debug`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L9)                 | `false`                    | Enables or disables debug mode. When enabled,<br>the module provides detailed debug information.    |
   | [`selectedLanguage`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L10)     | `en`                       | Sets the default language for the Cleverbot conversations.                                          |
   | [`maxRetryAttempts`](https://github.com/sefinek/cleverbot-free/blob/main/index.js#L11)     | `3`                        | Specifies the maximum number of retry attempts for<br>the API call if it fails initially.           |
@@ -127,4 +127,4 @@ It is inspired by the [IntriguingTiles/cleverbot-free](https://github.com/Intrig
 
 
 ## 📝 MIT License
-Copyright 2023-2024 © by [Sefinek](https://sefinek.net). All Rights Reserved.
+Copyright © 2024-2026 [Sefinek](https://sefinek.net)

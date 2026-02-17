@@ -1,6 +1,6 @@
 {
   "name": "@sefinek/cleverbot-free",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Simple and unofficial NPM module for interacting with the same API used by the Cleverbot website. Available for free!",
   "keywords": [
     "cleverbot-api",
@@ -31,11 +31,11 @@
     "test": "node test/async.js && node test/promise.js"
   },
   "dependencies": {
-    "axios": "^1.10.0"
+    "axios": "^1.13.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "globals": "^16.2.0",
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.3.0",
     "kleur": "^4.1.5"
   }
 }
