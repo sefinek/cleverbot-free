@@ -78,9 +78,9 @@ const updateCookiesIfNeeded = async () => {
 		failedRequestsCount++;
 
 		if (err.response && err.response.status === 403) {
-			throw new Error(`Error code ${err.response.status}. Cookies cannot be updated because your IP address has been banned.`);
+			throw new Error('Cookies cannot be updated because your IP address has been banned.', { cause: err });
 		} else {
-			throw new Error(`Failed to update cookies. ${err.message}`);
+			throw new Error('Failed to update cookies', { cause: err });
 		}
 	}
 };
@@ -129,7 +129,7 @@ const callCleverbotAPI = async (stimulus, context, language) => {
 	} catch (err) {
 		failedRequestsCount++;
 
-		throw new Error(`Cleverbot API call failed: ${err.message}`);
+		throw new Error('Cleverbot API call failed', { cause: err });
 	}
 };
 
@@ -142,7 +142,7 @@ CleverBot.interact = async (stimulus, context = [], language = selectedLanguage)
 			return await callCleverbotAPI(stimulus, context, language);
 		} catch (err) {
 			if (err.response && err.response.status === 403) {
-				throw new Error(`Attempt ${i + 1} failed: Error code ${err.response.status}. The response could not be obtained because your IP address has been banned.`);
+				throw new Error(`Attempt ${i + 1} failed: The response could not be obtained because your IP address has been banned.`, { cause: err });
 			} else {
 				const waitTime = retryBaseCooldown + Math.floor(Math.random() * 2000) + 1000 + incrementalDelay;
 				console.log(`Attempt ${i + 1} failed: ${err.message}. Waiting ${waitTime / 1000}s...`);
@@ -162,9 +162,7 @@ CleverBot.config = config => {
 	}
 
 	if ('debug' in config) {
-		if (typeof config.debug !== 'boolean') {
-			throw new Error('Invalid value for `debug`. It must be a boolean.');
-		}
+		if (typeof config.debug !== 'boolean') throw new Error('Invalid value for `debug`. It must be a boolean.');
 		debug = config.debug;
 	}
 
@@ -191,9 +189,7 @@ CleverBot.config = config => {
 	}
 
 	if ('cookieExpirationTime' in config) {
-		if (typeof config.cookieExpirationTime !== 'number' || config.cookieExpirationTime <= 0) {
-			throw new Error('Invalid value for `cookieExpirationTime`. It must be a positive number.');
-		}
+		if (typeof config.cookieExpirationTime !== 'number' || config.cookieExpirationTime <= 0) throw new Error('Invalid value for `cookieExpirationTime`. It must be a positive number.');
 		cookieExpirationTime = config.cookieExpirationTime;
 	}
 };
