@@ -67,7 +67,7 @@ Configures the settings of the Cleverbot module. This function allows you to set
 ### `CleverBot.getData()`
 Retrieves the current session data and other relevant information.
 
-- **Returns**: See [types](https://github.com/sefinek/cleverbot-free/blob/c0c6748fb8828a611b005216e768af370cb61ea4/index.d.ts#L64).
+- **Returns**: See [types](https://github.com/sefinek/cleverbot-free/blob/main/index.d.ts#L61).
 
 ### `CleverBot.newSession()`
 Allows for the deletion of the current session and the initiation of a new one. The conversation context should also be removed.
