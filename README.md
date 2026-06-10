@@ -1,22 +1,4 @@
-<div align="center">
-    <h1>❎ 💸 Free CleverBOT NPM Module 🤖 💻</h1>
-    <p>
-        <b>
-            Simple and unofficial NPM module for interacting with the same API that the Cleverbot website uses.<br>
-            Available for free! ✔️
-        </b>
-    </p>
-    <p>
-        <a href="https://www.npmjs.com/package/@sefinek/cleverbot-free" target="_blank" title="@sefinek/cleverbot-free - npm" style="text-decoration:none">
-            <img src="https://img.shields.io/npm/dt/@sefinek/cleverbot-free?maxAge=3600" alt="Number of downloads">
-            <img src="https://img.shields.io/github/issues/sefinek/cleverbot-free" alt="Issues">
-            <img src="https://img.shields.io/github/last-commit/sefinek/cleverbot-free" alt="Last commit">
-            <img src="https://img.shields.io/github/commit-activity/w/sefinek/cleverbot-free" alt="Commit activity">
-            <img src="https://img.shields.io/github/languages/code-size/sefinek/cleverbot-free" alt="Code size">
-        </a>
-    </p>
-</div>
-
+# Free CleverBOT NPM Module ❎ 💸
 This module allows developers to interact with the Cleverbot [API](https://en.wikipedia.org/wiki/API) without needing an official [API key](https://en.wikipedia.org/wiki/API_key),
 providing a convenient and cost-effective way to integrate Cleverbot chatbot features into their projects.
 
