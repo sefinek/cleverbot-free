@@ -37,12 +37,12 @@ const buildCookieHeader = () => {
 const buildMainPayload = (stimulus, context, language) => {
 	let payload = `stimulus=${encodeURIComponent(stimulus)}&`;
 
-	context.reverse().forEach((msg, i) => {
-		payload += `vText${i}=${encodeURIComponent(msg)}&`;
-	});
+	for (let i = context.length - 1, j = 0; i >= 0; i--, j++) {
+		payload += `vText${j}=${encodeURIComponent(context[i])}&`;
+	}
 
 	payload += `${language ? `cb_config_language=${language}&` : ''}cb_config_scripting=no&islearning=1&icognoid=wsf&icognocheck=`;
-	payload += payload + md5(payload.substring(7, 33));
+	payload += md5(payload.substring(7, 33));
 
 	if (debug) console.debug('Built payload:', { stimulus, context, language, payload });
 	return payload;
@@ -114,18 +114,19 @@ const callCleverbotAPI = async (stimulus, context, language) => {
 			throw new Error(`The response from Cleverbot API is empty: ${data}`);
 		}
 
-		successfulRequestsCount++;
 		if (debug) console.debug('Received response from Cleverbot:', { response: data });
 
 		const responseLines = data.split('\r');
-		if (responseLines.length >= 3) {
-			cbsId = responseLines[1];
-			xai = `${cbsId.substring(0, 3)},${responseLines[2]}`;
-			lastResponse = responseLines[0];
-			return lastResponse;
+		if (responseLines.length < 3) {
+			throw new Error(`The response format from Cleverbot API is invalid: ${data}`);
 		}
 
-		console.error('The response format from Cleverbot API is invalid!');
+		cbsId = responseLines[1];
+		xai = `${cbsId.substring(0, 3)},${responseLines[2]}`;
+		lastResponse = responseLines[0];
+		successfulRequestsCount++;
+
+		return lastResponse;
 	} catch (err) {
 		failedRequestsCount++;
 
@@ -141,7 +142,7 @@ CleverBot.interact = async (stimulus, context = [], language = selectedLanguage)
 		try {
 			return await callCleverbotAPI(stimulus, context, language);
 		} catch (err) {
-			if (err.response && err.response.status === 403) {
+			if (err.cause && err.cause.response && err.cause.response.status === 403) {
 				throw new Error(`Attempt ${i + 1} failed: The response could not be obtained because your IP address has been banned.`, { cause: err });
 			} else {
 				const waitTime = retryBaseCooldown + Math.floor(Math.random() * 2000) + 1000 + incrementalDelay;

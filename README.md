@@ -35,10 +35,10 @@ Therefore, consider the following guidelines:
 ## 📥 Installation
 Install this module using [npm 🟥](https://www.npmjs.com) or [yarn 🐈](https://yarnpkg.com):
 ```bash
-npm install cleverbot-free
+npm install @sefinek/cleverbot-free
 ```
 ```bash
-yarn add cleverbot-free
+yarn add @sefinek/cleverbot-free
 ```
 
 
@@ -119,7 +119,7 @@ const context = [];
 If you require any assistance or have questions regarding this module, don't hesitate to open a new [GitHub Issue](https://github.com/sefinek/cleverbot-free/issues).
 Your feedback and contributions are highly appreciated.
 If you find this module valuable and useful for your projects, we kindly invite you to show your support by giving it [⭐ a star on GitHub](https://github.com/sefinek/cleverbot-free).
-Thank you for using [cleverbot-free](https://www.npmjs.com/package/cleverbot-free)!
+Thank you for using [@sefinek/cleverbot-free](https://www.npmjs.com/package/@sefinek/cleverbot-free)!
 
 
 ## 🔖 Credits

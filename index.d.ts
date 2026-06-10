@@ -1,32 +1,33 @@
-declare module '@sefinek/cleverbot-free' {
-    export type Stimulus = string;
-    export type Context = string[];
-    export type Language =
+export = CleverBot;
+
+declare namespace CleverBot {
+    type Stimulus = string;
+    type Context = string[];
+    type Language =
         | 'af' | 'id' | 'ms' | 'ca' | 'cs' | 'da' | 'de' | 'en' | 'es' | 'eu'
         | 'ti' | 'fr' | 'gl' | 'hr' | 'zu' | 'is' | 'it' | 'lt' | 'hu' | 'nl'
         | 'no' | 'pl' | 'pt' | 'ro' | 'sl' | 'fi' | 'sv' | 'vi' | 'tr' | 'el'
         | 'bg' | 'ru' | 'sr' | 'uk' | 'ko' | 'zh' | 'ja' | 'hi' | 'th';
 
-    export type Headers = {
+    interface Headers {
         'Accept': string;
         'Accept-Encoding': string;
         'Accept-Language': string;
         'Cache-Control': string;
         'Connection': string;
         'Host': string;
-        'Referer': string;
-        'Sec-Ch-Ua'?: string;
+        'Sec-Ch-Ua': string;
         'Sec-Ch-Ua-Mobile': string;
-        'Sec-Ch-Ua-Platform'?: string;
+        'Sec-Ch-Ua-Platform': string;
         'Sec-Fetch-Dest': string;
         'Sec-Fetch-Mode': string;
         'Sec-Fetch-Site': string;
         'Sec-Fetch-User': string;
         'Upgrade-Insecure-Requests': string;
         'User-Agent': string;
-    };
+    }
 
-    export interface Config {
+    interface Config {
         debug?: boolean;
         defaultLanguage?: Language;
         maxRetryAttempts?: number;
@@ -34,39 +35,43 @@ declare module '@sefinek/cleverbot-free' {
         cookieExpirationTime?: number;
     }
 
-    export interface CookieData {
+    interface CookieEntry {
         content: string[] | undefined;
         lastUpdate: number;
     }
 
-    export interface SessionData {
+    interface CookieState {
+        cookieExpirationTime: number;
+        data: CookieEntry[];
+    }
+
+    interface SessionData {
         cbsId: string | undefined;
         xai: string | undefined;
         ns: number;
         lastResponse: string | undefined;
     }
 
-    export interface RequestData {
+    interface RequestData {
         successfulRequestsCount: number;
         failedRequestsCount: number;
         headers: Headers;
     }
 
-    export interface CleverBotData {
+    interface CleverBotData {
         debug: boolean;
         selectedLanguage: Language;
         maxRetryAttempts: number;
         retryBaseCooldown: number;
-        cookie: CookieData;
+        cookie: CookieState;
         session: SessionData;
         request: RequestData;
     }
 
-
     /**
      * The main function of the module, communicating with the Cleverbot API.
      * @param stimulus - The input text for Cleverbot.
-     * @param context - The required conversation context as an array of strings.
+     * @param context - The conversation context as an array of strings.
      * @param language - Optional language code for the Cleverbot session.
      * @returns The response from Cleverbot as a string.
      * @example
@@ -74,11 +79,12 @@ declare module '@sefinek/cleverbot-free' {
      *
      * CleverBot.config({ debug: false, defaultLanguage: 'en', maxRetryAttempts: 5, retryBaseCooldown: 4000, cookieExpirationTime: 15768000 });
      *
+     * const msg = 'Hello';
      * const context = [];
      *
      * (async () => {
      *    try {
-     *        const res = await CleverBot.interact('Hello', context);
+     *        const res = await CleverBot.interact(msg, context);
      *
      *        context.push(msg);
      *        context.push(res);
@@ -90,7 +96,7 @@ declare module '@sefinek/cleverbot-free' {
      * })();
      * @throws {Error} If it fails to get a response after the maximum number of attempts.
      */
-    export function interact(stimulus: Stimulus, context: Context, language?: Language): Promise<string>;
+    function interact(stimulus: Stimulus, context?: Context, language?: Language): Promise<string>;
 
     /**
      * Function responsible for configuring the module.
@@ -107,7 +113,7 @@ declare module '@sefinek/cleverbot-free' {
      * });
      * @throws {Error} If the provided configuration object is invalid.
      */
-    export function config(config: Config): void;
+    function config(config: Config): void;
 
     /**
      * Returns the current session data stored in RAM and other information.
@@ -115,7 +121,7 @@ declare module '@sefinek/cleverbot-free' {
      * @example console.log(CleverBot.getData());
      * @returns An object with Cleverbot data.
      */
-    export function getData(): CleverBotData;
+    function getData(): CleverBotData;
 
     /**
      * Allows for the deletion of the current session and the initiation of a new one. The conversation context should also be removed.
@@ -123,20 +129,19 @@ declare module '@sefinek/cleverbot-free' {
      * @example
      * const CleverBot = require('@sefinek/cleverbot-free');
      *
-     * const context = ['Hello', 'Hi', 'How are you?'];
+     * let context = ['Hello', 'Hi', 'How are you?'];
      *
      * CleverBot.newSession();
      * context = [];
      */
-    export function newSession(): void;
+    function newSession(): void;
 
     /**
-     * Represents the version number of the `cleverbot-free` module.
+     * Represents the version number of the `@sefinek/cleverbot-free` module.
      * This property contains a string that specifies the current version of the module,
      * conforming to the Semantic Versioning (SemVer) standard.
      *
      * @example console.log(CleverBot.version); // Displays e.g. '2.0.0'
-     * @return The current version of the module.
      */
-    export const version: string;
+    const version: string;
 }
