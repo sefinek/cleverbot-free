@@ -1,6 +1,6 @@
 {
   "name": "@sefinek/cleverbot-free",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "Simple and unofficial NPM module for interacting with the same API used by the Cleverbot website. Available for free!",
   "keywords": [
     "cleverbot-api",
