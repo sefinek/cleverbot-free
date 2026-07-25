@@ -206,9 +206,7 @@ CleverBot.newSession = () => {
 	lastResponse = undefined;
 };
 
-CleverBot.getData = () => {
-	return { debug, selectedLanguage, maxRetryAttempts, retryBaseCooldown, cookie: { cookieExpirationTime, data: [{ content: cookies, lastUpdate: lastCookieUpdate }] }, session: { cbsId, xai, ns, lastResponse }, request: { successfulRequestsCount, failedRequestsCount, headers: HEADERS } };
-};
+CleverBot.getData = () => ({ debug, selectedLanguage, maxRetryAttempts, retryBaseCooldown, cookie: { cookieExpirationTime, data: [{ content: cookies, lastUpdate: lastCookieUpdate }] }, session: { cbsId, xai, ns, lastResponse }, request: { successfulRequestsCount, failedRequestsCount, headers: HEADERS } });
 
 CleverBot.version = version;
 
